@@ -18,6 +18,11 @@ class Fraccion
       @n, @d = n, d 
     end	
   end
-
+  
+  #TO_STRING
+  def to_s		
+    return "#{n}/#{d}"
+  end
+  
 end
 
