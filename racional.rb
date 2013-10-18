@@ -23,6 +23,11 @@ class Fraccion
   def to_s		
     return "#{n}/#{d}"
   end
-  
+ 
+  #MULTIPLICAR
+  def mult(other)
+    return Racional.new(@n*other.n, @d*other.d))		 			
+  end 
+
 end
 
