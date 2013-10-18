@@ -11,4 +11,8 @@ class Test_Fraccion < Test::Unit::TestCase
   def test_resta
     assert_equal("5/12", Racional.new(3,4).rest(Racional.new(1,3)).to_s)
   end
+  
+  def test_mult
+    assert_equal("45/16", Racional.new(9,2).mult(Racional.new(5,8)).to_s)
+  end  
 end
