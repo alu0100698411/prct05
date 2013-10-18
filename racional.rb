@@ -4,7 +4,7 @@
 
 require "./gcd.rb"
 
-class Fraccion
+class Racional
   #ACCESO ATRIBUTOS
   attr_reader :n, :d 	  
 
@@ -21,7 +21,7 @@ class Fraccion
   
   #TO_STRING
   def to_s		
-    return "#{n}/#{d}"
+    puts "#{n}/#{d}"
   end
  
   #MULTIPLICAR
@@ -46,4 +46,3 @@ class Fraccion
     return Racional.new(((mcm(aux.max, aux.min)/@d)*@n)-((mcm(aux.max, aux.min)/other.d)*other.n),mcm(aux.max, aux.min))
   end
 end
-
