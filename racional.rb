@@ -33,5 +33,12 @@ class Fraccion
   def div(other)
     return Racional.new(@n*other.d, @d*other.n))		 			
   end 
+  
+  #SUMA
+  def sum(other)			
+    aux=[@d, other.d]
+    return Racional.new(((mcm(aux.max, aux.min)/@d)*@n)+((mcm(aux.max, aux.min)/other.d)*other.n),mcm(aux.max, aux.min))
+  end
+
 end
 
