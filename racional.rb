@@ -21,7 +21,7 @@ class Racional
   
   #TO_STRING
   def to_s		
-    puts "#{n}/#{d}"
+    return "#{n}/#{d}"
   end
  
   #MULTIPLICAR
