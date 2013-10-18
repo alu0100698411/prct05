@@ -8,4 +8,7 @@ class Test_Fraccion < Test::Unit::TestCase
     assert_equal("60/14", Racional.new(8,2).sum(Racional.new(2,7)).to_s)
   end
   
+  def test_resta
+    assert_equal("5/12", Racional.new(3,4).rest(Racional.new(1,3)).to_s)
+  end
 end
