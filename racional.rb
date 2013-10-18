@@ -45,4 +45,14 @@ class Racional
     aux=[@d, other.d]
     return Racional.new(((mcm(aux.max, aux.min)/@d)*@n)-((mcm(aux.max, aux.min)/other.d)*other.n),mcm(aux.max, aux.min))
   end
+  
+  #SIMPLIFICAR
+  def simplificar()
+    aux = [@n, @d]
+    return Racional.new(@n/gcd(aux.max, aux.min), @d/gcd(aux.max, aux.min))
+  end
 end
+
+a = Racional.new(112, 350)
+b = a.simplificar
+puts b.to_s
