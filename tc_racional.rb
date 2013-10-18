@@ -17,6 +17,9 @@ class Test_Fraccion < Test::Unit::TestCase
   end  
   
   def test_div
-    assert_equal("112/350", Racional.new(10,4).div(Racional.new(28,35)).to_s)
+    assert_equal("350/112", Racional.new(10,4).div(Racional.new(28,35)).to_s)
   end  
+  def test_simp
+    assert_equal("8/25", Racional.new(112,350).simplificar.to_s)
+  end
 end
