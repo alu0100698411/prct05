@@ -8,3 +8,8 @@ def gcd(u, v) #V SIEMPRE DEBE DE SER MENOR
   end
   u   
 end
+
+def mcm(u, v) #V SIEMPRE DEBE DE SER MENOR
+  u = u*v / gcd(u, v)
+  u
+end
