@@ -40,5 +40,10 @@ class Fraccion
     return Racional.new(((mcm(aux.max, aux.min)/@d)*@n)+((mcm(aux.max, aux.min)/other.d)*other.n),mcm(aux.max, aux.min))
   end
 
+  #RESTA
+  def rest(other)
+    aux=[@d, other.d]
+    return Racional.new(((mcm(aux.max, aux.min)/@d)*@n)-((mcm(aux.max, aux.min)/other.d)*other.n),mcm(aux.max, aux.min))
+  end
 end
 
