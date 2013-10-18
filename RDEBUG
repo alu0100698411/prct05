@@ -1,0 +1,57 @@
+
+Abrimos el debug, listamos el programa (l) y añadimos un punto de ruptura en el 
+bucle (b 6) para realizar posteriormente una traza.
+
+      gcd.rb:3:def gcd(u, v)
+      (rdb:1) l
+      [-2, 7] in gcd.rb
+	1  #!
+	2  
+      => 3  def gcd(u, v)
+	4    u, v = u.abs, v.abs
+	5    while v == 0
+	6      u, v = v, u % v
+	7    end
+      (rdb:1) b 6
+      Set breakpoint 1 at gcd.rb:6
+Avanzamos a la siguiente sentencia(n) y continuamos hasta el punto de ruptura (c).
+Como se puede apreciar no se llega a entrar en el bucle y nos devuelve u con el
+valor incial.
+      (rdb:1) n
+      gcd.rb:11:puts gcd(23,15)
+      (rdb:1) c
+      23
+
+Aquí hay una pequeña prueba para ver como funciona el punto de ruptura
+
+      gcd.rb:3:def gcd(u, v)
+      (rdb:1) l
+      [-2, 7] in gcd.rb
+	1  #!
+	2  
+      => 3  def gcd(u, v)
+	4    u, v = u.abs, v.abs
+	5    while v == 0
+	6      u, v = v, u % v
+	7    end
+      (rdb:1) b 4
+      Set breakpoint 1 at gcd.rb:4
+      (rdb:1) n
+      gcd.rb:11:puts gcd(23,15)
+      (rdb:1) c
+      Breakpoint 1, gcd at gcd.rb:4
+      gcd.rb:4:  u, v = u.abs, v.abs
+      (rdb:1) c
+      23
+
+A Partir de lo anterior podemos ver claramente los errores del programa
+
+      def gcd(u, v)
+	u, v = u.abs, v.abs
+	
+	while v == 0 #NO ENTRA AL BUCLE SI V ES DISTINTO DE CERO
+	  u = v 
+	  v = u % v #V = V MOD V, SIEMPRE DA CERO. SOLO SE EJECUTARIA SI V ES CERO Y HABRÍA ERROR AL DIVIDIR POR CERO
+	end
+	u      #DEVUELVE SIEMPRE EL VALOR INICIAL PASADO AL METODO
+      end
