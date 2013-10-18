@@ -26,12 +26,12 @@ class Fraccion
  
   #MULTIPLICAR
   def mult(other)
-    return Racional.new(@n*other.n, @d*other.d))		 			
+    return Racional.new(@n*other.n, @d*other.d)	 			
   end 
   
   #DIVIDIR
   def div(other)
-    return Racional.new(@n*other.d, @d*other.n))		 			
+    return Racional.new(@n*other.d, @d*other.n)	 			
   end 
   
   #SUMA
